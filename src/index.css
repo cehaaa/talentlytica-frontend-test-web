@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .toast {
+    @apply fixed right-0 top-4 rounded bg-white p-3 text-sm shadow;
+
+    transform: translateX(-10%);
+    width: 300px;
+
+    animation: slide-in 0.5s ease-in-out;
+  }
+
+  .toast-slide-in {
+    animation: slide-in 0.5s ease-in-out;
+  }
+
+  .toast-slide-out {
+    animation: slide-out 0.5s ease-in-out;
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-10%);
+    }
+  }
+
+  @keyframes slide-out {
+    from {
+      transform: translateX(-10%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+}
